@@ -5,7 +5,7 @@ bundle:
   uuid: ccd20c42-1891-436c-a82b-754ed6559bd8
 
 include:
-  - resources/*.yml
+  - resources/**/*.yml
 
 # Variable declarations. These variables are assigned in the dev/prod targets below.
 variables:
