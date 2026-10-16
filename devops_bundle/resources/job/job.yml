@@ -24,7 +24,7 @@ resources:
       tasks:
         - task_key: notebook_task
           notebook_task:
-            notebook_path: ../src/sample_notebook.py
+            notebook_path: ../../src/sample_notebook.py
         # - task_key: refresh_pipeline
         #   depends_on:
         #     - task_key: notebook_task
