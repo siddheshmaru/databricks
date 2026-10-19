@@ -9,32 +9,7 @@ variables:
     default: "workspace"
 
 resources:
-  pipelines:
-    pipeline_pl_sql_ingestion:
-      name: pl_sql_ingestion
-      ingestion_definition:
-        connection_name: ${var.sqlserver_connection_name}
-        objects:
-          - table:
-              source_catalog: ${var.source_catalog}
-              source_schema: SalesLT 
-              source_table: Address
-              destination_catalog: ${var.destination_catalog}
-              destination_schema: default
-              destination_table: Address
-          - table:
-              source_catalog: ${var.source_catalog}
-              source_schema: SalesLT
-              source_table: ProductModel
-              destination_catalog: ${var.destination_catalog}
-              destination_schema: default
-              destination_table: ProductModel
-        source_type: SQLSERVER
-      schema: default
-      channel: PREVIEW
-      catalog: ${var.destination_catalog}
-      serverless: true
-    
+  pipelines:    
     pipeline_pl_sql_ingestions:
       name: pl_sql_ingestions
       ingestion_definition:
