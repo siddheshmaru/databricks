@@ -1,0 +1,36 @@
+variables:
+  sqlserver_connection_name:
+    default: "databricks_sql"
+
+  source_catalog:
+    default: "db_my_project"
+
+  destination_catalog:
+    default: "workspace"
+
+resources:
+  pipelines:
+    pipeline_pl_sql_ingestion:
+      name: pl_sql_ingestion
+      ingestion_definition:
+        connection_name: ${var.sql_server_connection_name}
+        objects:
+          - table:
+              source_catalog: ${var.source.catlog}
+              source_schema: SalesLT 
+              source_table: Address
+              destination_catalog: ${var.destination_catlog}
+              destination_schema: default
+              destination_table: Address
+          - table:
+              source_catalog: ${var.source.catlog}
+              source_schema: SalesLT
+              source_table: ProductModel
+              destination_catalog: ${var.destination_catlog}
+              destination_schema: default
+              destination_table: ProductModel
+        source_type: SQLSERVER
+      schema: default
+      channel: PREVIEW
+      catalog: ${var.destination_catlog}
+      serverless: true
