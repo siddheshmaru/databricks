@@ -10,8 +10,8 @@ variables:
 
 resources:
   pipelines:
-    pipeline_pl_sql_ingestion:
-      name: pl_sql_ingestion
+    pipeline_pl_sql_ingestions:
+      name: pl_sql_ingestions
       ingestion_definition:
         connection_name: ${var.sqlserver_connection_name}
         objects:
